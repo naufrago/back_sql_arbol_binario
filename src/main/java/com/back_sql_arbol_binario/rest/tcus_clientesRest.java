@@ -30,7 +30,9 @@ public class tcus_clientesRest {
 
 	@GetMapping("/listar")
 	public List<tcus_clientes> listar(){
-		return clientesDAO.findAll();
+		//return clientesDAO.findAll();
+			
+		return clientesDAO.findAllclient();
 	}
 	
 	@DeleteMapping("/eliminar/{id}")
@@ -42,4 +44,10 @@ public class tcus_clientesRest {
 	public void actualizar(@RequestBody tcus_clientes cliente){
 		clientesDAO.save(cliente);
 	}
+	
+	
+	public List<tcus_clientes> listClientes(){
+		return clientesDAO.findAllclient();
+	}
+	
 }
